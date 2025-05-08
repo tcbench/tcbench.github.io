@@ -43,5 +43,14 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-
+  theme: sphinx_book_theme
+  theme_options:
+    # Add any specific theme options here
+    # e.g., for sphinx_book_theme:
+    # home_page_in_toc: true
+    # show_navbar_depth: 1
+    # launch_buttons:
+    #   binderhub_url: "https://mybinder.org" # If you use Binder
+    #   colab_url: "https://colab.research.google.com" # If you use Colab
+    pass
 
