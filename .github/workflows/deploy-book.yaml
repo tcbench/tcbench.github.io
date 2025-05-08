@@ -26,7 +26,7 @@ on:
       publish_dir:
         description: 'Publish dir for the peaceiris/actions-gh-pages action'
         required: false
-        default: '_build/html'
+        default: 'website/_build/html'
         type: string
       
 jobs:

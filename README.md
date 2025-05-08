@@ -13,13 +13,13 @@
 ## Where TCBench comes in
 
 
-### Repository Structure
+## Repository Structure
 
 ```bash
 
 ```
 
-## Citation
+### Citation
 If you find any of the code and dataset useful, feel free to cite our work through:
 
 ```bibtex

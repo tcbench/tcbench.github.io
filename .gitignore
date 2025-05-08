@@ -167,3 +167,8 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+0_build.txt
+1_report-build-status.txt
+2_deploy.txt
+/deploy
+/report-build-status
