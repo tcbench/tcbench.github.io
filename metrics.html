@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'metrics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -389,34 +391,28 @@ document.write(`
 <blockquote>
 <div><p><strong>Note</strong>: For all models logs, there will be a folder named <code class="docutils literal notranslate"><span class="pre">eval/</span></code>. This contains individual <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files for each relevant metric (e.g., RMSE, SpecDiv).</p>
 </div></blockquote>
-<p>We divide our metrics into 3 classes: (1) Deterministic-based, which cover evaluation used in conventional deterministic forecasting tasks, (2) Physics-based, which are aimed to construct a more physically-faithful and explainable data-driven forecast, and (3) Probabilistic-based, which account for the skillfulness of ensemble forecasts.</p>
+<p>TCBench provides three types of metrics: (1) Deterministic, which evaluate deterministic forecasting tasks such as intensity and track prediction; (2) Probabilistic, which evaluate probabilistic, ensemble-based forecasts; and (3) Metrics for Extreme Events, which evaluate the TCBench forecast skill for extreme events such as rapid intensification. We note that while most of TCBench is configured as a regression problem, we have formulated rapid intensification as a binary classification problem. This means rapid intensification models will be tasked with making a simple “yes/no” prediction for the occurrence of rapid intensification.</p>
 <ol class="arabic simple">
-<li><p><strong>Deterministic-based:</strong></p>
+<li><p><strong>Deterministic:</strong></p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> RMSE</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Bias</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Anomaly Correlation Coefficient (ACC)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Multiscale Structural Similarity Index (MS-SSIM)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Root mean square error (RMSE)</strong>:</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Mean absolute error (MAE)</strong>:</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>R-Squared Score (R<sup>2</sup>)</strong>:</p></li>
 </ul>
 </li>
-<li><p><strong>Physics-based:</strong></p>
+<li><p><strong>Probabilistic:</strong></p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spectral Divergence (SpecDiv)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spectral Residual (SpecRes)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Continuous Ranked Probability Score (CRPS)</strong>: Quantifies the accuracy of probabilistic predictions by measuring the difference between the predicted and observed cumulative distribution functions, with lower values indicating better predictions. For track predictions, CRPS was adjusted following S1 of Fernandez et al. (2025).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Brier Skill Score (BSS)</strong>: Measures the improvement of the forecast probability over a reference forecast, with values ranging from -∞ to 1, where 1 indicates a perfect forecast and 0 indicates no improvement over the reference.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Probability Integral Transform (PIT) Histogram</strong>: Provides a probabilistic estimate of model calibration. A PIT histogram with a uniform distribution indicates a well calibrated model, while a PIT histogram with a skewed or peaked distribution indicates a poorly calibrated model. (CITE)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Interquartile Range (IQR)</strong>:</p></li>
 </ul>
 </li>
-<li><p><strong>Probabilistic-based:</strong></p>
+<li><p><strong>Extreme Event:</strong></p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> RMSE Ensemble</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Bias Ensemble</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> ACC Ensemble</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> MS-SSIM Ensemble</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> SpecDiv Ensemble</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> SpecRes Ensemble</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Continuous Ranked Probability Score (CRPS)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Continuous Ranked Probability Skill Score (CRPSS)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spread</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spread/Skill Ratio</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Critical Success Index (CSI)</strong>: Also known as the Threat Score, measures the ratio of correctly predicted positive observations to the sum of all predicted positives, actual positives, and minus true positives.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Peirce Skill Score (PSS)</strong>: The Peirce skill score (also known as the Hansen and Kuipers discriminant, or the true skill statistic) is an estimate of how well the forecast separates “yes” events from “no” events. It ranges from -1 to 1, with +1 being a perfect score and 0 indicating no skill. PSS is generally considered to be better for rare events, though for extremely rare events it tends to 0.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Odds Ratio (OR)</strong>: The odds ratio provides the ratio of the odds of a “yes” forecast being correct versus a “yes” forecast being incorrect. The odds ratio ranges from 0 to <span class="math notranslate nohighlight">\(\infty\)</span>, with <span class="math notranslate nohighlight">\(\infty\)</span> being a perfect score and 1 having no skill. (We can also use the log of the odds ratio, meaning it would range from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span> and 0 would indicate no skill). The odds ratio takes prior probabilities into account and is less sensitive to hedging, though it cannot be used if any section of the contingency table is 0.</p></li>
 </ul>
 </li>
 </ol>
