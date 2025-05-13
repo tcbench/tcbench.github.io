@@ -1,4 +1,4 @@
-# Dataset Information
+# Datasets
 
 <!-- > __NOTE__: Hands-on exploration of the ChaosBench dataset in `notebooks/01a_s2s_data_exploration.ipynb`. All data has daily and 1.5-degree resolution.
  
