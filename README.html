@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TCBench - A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting &#8212; TCBench</title>
+    <title>TCBench &#8212; TCBench</title>
   
   
   
@@ -172,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    TCBench - A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting
+                    TCBench
                 </a>
             </li>
         </ul>
@@ -374,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TCBench - A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting</h1>
+    <h1>TCBench</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,6 +384,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-benchmark-for-global-tropical-cyclones-intensity-and-track-forecasting">A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-tcbench-comes-in">Where TCBench comes in</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository Structure</a><ul class="nav section-nav flex-column">
@@ -402,8 +403,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tcbench-a-benchmark-for-global-tropical-cyclones-intensity-and-track-forecasting">
-<h1>TCBench - A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting<a class="headerlink" href="#tcbench-a-benchmark-for-global-tropical-cyclones-intensity-and-track-forecasting" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tcbench">
+<h1>TCBench<a class="headerlink" href="#tcbench" title="Link to this heading">#</a></h1>
+<section id="a-benchmark-for-global-tropical-cyclones-intensity-and-track-forecasting">
+<h2>A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting<a class="headerlink" href="#a-benchmark-for-global-tropical-cyclones-intensity-and-track-forecasting" title="Link to this heading">#</a></h2>
 <div align="center">
 <a href="https://tcbench.github.io"><img src="https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)" alt="Homepage"/></a>
   <a href=""><img src="https://img.shields.io/badge/ArXiV-XXXX.XXXX-XXXX.svg" alt="arXiv"/></a>
@@ -412,6 +415,7 @@ document.write(`
 </div>
 </br>
 <p>TCBench is a benchmark dataset for evaluating medium-range (1 - 5 day) forecasts of tropical cyclone (TC) <strong>track</strong> and <strong>intensity</strong>. <strong>Track</strong> refers to the path that the TC takes as it moves over the ocean or land, while <strong>intensity</strong>, for TCBench, refers to the highest wind speesd of the TC. TCBench is built upon IBTrACS (CITE), an observational dataset of tropical cyclone track and intensity. TCBench predicts the temporal evolution of a known tropical disturbance, conditioned on the initial position and intensity of the disturbance. TCBench includes state-of-the-art physical weather models, such as TIGGE (CITE), and data-driven weather models (e.g., AIFS, Pangu-Weather, FourCastNet v2, GenCast). TCBench also provides a suite of deterministic and probabilistic evaluation metrics tailored specifically to the unique challenges and concerns of operational tropical cyclone forecasting. TCBench is designed to provide tropical meteorologists with data-driven tools and workflows to improve TC forecasting and better investigate key TC processes; and to help AI model developers address relevant, TC-specific forecasting and modeling challenges. We hope that by lowering barriers to reproducibility, providing frameworks for process-aware evaluation of extreme events, and providing guidelines for standardized TC-specific model evaluation, TCBench can help to democratize data-driven TC forecasting on a global scale.</p>
+</section>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <p>Tropical cyclones (TCs) are some of the most expensive and deadly natural disasters on the planet. TCs threaten coastal and inland communities with extreme winds, storm surges, heavy rainfall, and coastal and flash flooding. In the United States alone, TCs have been responsible for over $1.5 billion in damages, and over 7,000 deaths between 1980 and 2024 (<a class="reference external" href="https://www.ncei.noaa.gov/access/billions/summary-stats">https://www.ncei.noaa.gov/access/billions/summary-stats</a>). Accurate tropical cyclone forecasts provide actionable information at lead times sufficient for planning, evacuation, and disaster mitigation. With more than half of Earth’s population projected to reside in the tropics by 2050, and more than a billion people projected to live in low-lying coastal zones by 2060 (CITE), the need for timely and accurate tropical cyclone forecasts will only increase. Currently, many operational hurricane forecast centers, including the National Hurricane Center in the U.S., successfully incorporate statistical and data-driven models into their forecasting protocols, suggesting that there are opportunities for machine learning models to provide added value to tropical cyclone forecasting. That said, while opportunities for lifesaving improvements abound, objective comparisons between models and modeling frameworks can be challenging due to a lack of unified training data and comprehensive evaluation protocols.</p>
@@ -497,6 +501,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-benchmark-for-global-tropical-cyclones-intensity-and-track-forecasting">A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-tcbench-comes-in">Where TCBench comes in</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository Structure</a><ul class="nav section-nav flex-column">

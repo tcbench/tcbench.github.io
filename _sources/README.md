@@ -1,4 +1,5 @@
-# TCBench - A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting
+# TCBench
+## A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting
 
 <div align="center">
 <a href="https://tcbench.github.io"><img src="https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)" alt="Homepage"/></a>
