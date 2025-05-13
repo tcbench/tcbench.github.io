@@ -1,6 +1,6 @@
 # Evaluation
 
-Once training is done, we can perform evaluation depending on the use case. We recommend using GPUs for evaluation.
+<!-- Once training is done, we can perform evaluation depending on the use case. We recommend using GPUs for evaluation.
 
 1. __Autoregressive__ if we have an autoregressive model, we can simply run:
 
@@ -51,4 +51,4 @@ You can access the complete scores (in `.csv` format) for climatology, persisten
 | 539.7944 | 285.9499 | 215.14742| 186.43161| 166.28784| ... | 0.07912156|
 | 538.9591 | 285.43832| 214.82317| 186.23743| 166.16902| ... | 0.07907272|
 | 538.1366 | 284.96063| 214.51791| 186.04941| 166.04732| ... | 0.07903882|
-| ...      | ...      | ...      | ...      | ...      | ... | ...      |
+| ...      | ...      | ...      | ...      | ...      | ... | ...      | -->

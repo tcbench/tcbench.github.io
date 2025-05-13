@@ -1,6 +1,6 @@
 # Task Overview
 
-The `.yaml` file always has two sections: model_args and data_args. They allow you to change and modify the training processes to follow the configurations provided in the original manuscript.
+<!-- The `.yaml` file always has two sections: model_args and data_args. They allow you to change and modify the training processes to follow the configurations provided in the original manuscript.
 
 ```
 model_args:
@@ -30,4 +30,4 @@ __Note__:
 
 3. If `lead_time > 1`, the models will be able to forecast \( n \)-days ahead. For example, in our direct forecasts, if `lead_time = 4`, our model will predict the states 4 days into the future (default: 1).
 
-4. If `land_vars` and/or `ocean_vars` are set with entries from the acronyms, these will be used as additional inputs and targets, on top of ERA5 variables (default: []).
+4. If `land_vars` and/or `ocean_vars` are set with entries from the acronyms, these will be used as additional inputs and targets, on top of ERA5 variables (default: []). -->
