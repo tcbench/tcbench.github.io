@@ -1,6 +1,6 @@
 # Dataset Information
 
-> __NOTE__: Hands-on exploration of the ChaosBench dataset in `notebooks/01a_s2s_data_exploration.ipynb`. All data has daily and 1.5-degree resolution.
+<!-- > __NOTE__: Hands-on exploration of the ChaosBench dataset in `notebooks/01a_s2s_data_exploration.ipynb`. All data has daily and 1.5-degree resolution.
  
 1. __ERA5 Reanalysis__ for Surface-Atmosphere (1979-2023). The following table indicates the 48 variables (channels) that are available for Physics-based models. Note that the __Input__ ERA5 observations contains __ALL__ fields, including the unchecked boxes:
 
@@ -86,7 +86,7 @@
 | sossheig | sea surface height                         | m                       |
 | sosstsst | sea surface temperature                    | $^\circ C$ |
 | sowaflup | net upward water flux                      | $kg/m^2/s$ |
-| sozotaux | zonal wind stress                          | $N m^{-2}$ |
+| sozotaux | zonal wind stress                          | $N m^{-2}$ | -->
 
 
 
