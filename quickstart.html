@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'quickstart';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Dataset Information" href="dataset.html" />
+    <link rel="next" title="Datasets" href="dataset.html" />
     <link rel="prev" title="TCBench - A Benchmark for Global Tropical Cyclones Intensity and Track Forecasting" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,7 +175,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Datasets</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="training.html">Training</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="task.html">Task Overview</a></li>
 </ul>
@@ -184,7 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="baseline.html">Baseline Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline.html">Baselines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leaderboard.html">Leaderboard</a></li>
 </ul>
 
@@ -385,23 +385,25 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p><strong><em>NOTE:</em></strong>  Only need the dataset? Jump directly to <strong>Step 2</strong>. You need ~150GB of free disk space. If you find any problems, feel free to contact us or raise a GitHub issue.</p>
-</div></blockquote>
-<p><strong>Step 0</strong>: Clone the <a class="reference external" href="https://github.com/leap-stc/ChaosBench">ChaosBench</a> Github repository</p>
-<p><strong>Step 1</strong>: Install package dependencies</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ChaosBench
+<!-- > **_NOTE:_**  Only need the dataset? Jump directly to **Step 2**. You need ~150GB of free disk space. If you find any problems, feel free to contact us or raise a GitHub issue. 
+
+**Step 0**: Clone the [ChaosBench](https://github.com/leap-stc/ChaosBench) Github repository
+
+**Step 1**: Install package dependencies
+```
+$ cd ChaosBench
 $ pip install -r requirements.txt
-</pre></div>
-</div>
-<p><strong>Step 2</strong>: Initialize the data space by running</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd data/
+```
+
+**Step 2**: Initialize the data space by running
+```
+$ cd data/
 $ wget https://huggingface.co/datasets/LEAP/ChaosBench/resolve/main/process.sh
 $ chmod +x process.sh
-</pre></div>
-</div>
-<p><strong>Step 3</strong>: Download the data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Required for inputs and climatology (e.g., for normalization; 1979-)
+```
+**Step 3**: Download the data 
+```
+# Required for inputs and climatology (e.g., for normalization; 1979-)
 $ ./process.sh era5
 $ ./process.sh lra5
 $ ./process.sh oras5
@@ -423,8 +425,7 @@ $ ./process.sh ecmwf_ensemble
 $ ./process.sh panguweather
 $ ./process.sh fourcastnetv2
 $ ./process.sh graphcast
-</pre></div>
-</div>
+``` -->
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,7 +472,7 @@ $ ./process.sh graphcast
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dataset Information</p>
+        <p class="prev-next-title">Datasets</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,6 +1,6 @@
 # Training
 
-> __NOTE__: Hands-on modeling and training workflow can be found in `notebooks/02a_s2s_modeling.ipynb` and `notebooks/03a_s2s_train.ipynb`
+<!-- > __NOTE__: Hands-on modeling and training workflow can be found in `notebooks/02a_s2s_modeling.ipynb` and `notebooks/03a_s2s_train.ipynb`
 
 We will outline how one can implement their own data-driven models. Several examples, including ED, ResNet, UNet, and FNO have been provided in the main repository. 
 
@@ -43,4 +43,4 @@ class S2SBenchmarkModel(pl.LightningModule):
 $ python train.py --config_filepath chaosbench/configs/<YOUR_MODEL>_s2s.yaml
 ```
 
-> __NOTE__: Now you will notice that there is a `.yaml` file. We will define the definition of each field next, allowing for greater control over different training strategies.
+> __NOTE__: Now you will notice that there is a `.yaml` file. We will define the definition of each field next, allowing for greater control over different training strategies. -->

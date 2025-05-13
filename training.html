@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Task Overview" href="task.html" />
-    <link rel="prev" title="Dataset Information" href="dataset.html" />
+    <link rel="prev" title="Datasets" href="dataset.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,7 +175,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Datasets</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Training</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="task.html">Task Overview</a></li>
 </ul>
@@ -184,7 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="baseline.html">Baseline Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline.html">Baselines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leaderboard.html">Leaderboard</a></li>
 </ul>
 
@@ -385,46 +385,50 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="training">
 <h1>Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p><strong>NOTE</strong>: Hands-on modeling and training workflow can be found in <code class="docutils literal notranslate"><span class="pre">notebooks/02a_s2s_modeling.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">notebooks/03a_s2s_train.ipynb</span></code></p>
-</div></blockquote>
-<p>We will outline how one can implement their own data-driven models. Several examples, including ED, ResNet, UNet, and FNO have been provided in the main repository.</p>
-<p><strong>Step 1</strong>: Define your model class.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># An example can be found for e.g. &lt;YOUR_MODEL&gt; == fno
+<!-- > __NOTE__: Hands-on modeling and training workflow can be found in `notebooks/02a_s2s_modeling.ipynb` and `notebooks/03a_s2s_train.ipynb`
 
-$ touch chaosbench/models/&lt;YOUR_MODEL&gt;.py
-</pre></div>
-</div>
-<p><strong>Step 2</strong>: Import and initialize your model in the main <code class="docutils literal notranslate"><span class="pre">chaosbench/models/model.py</span></code> file, given the pseudocode below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examples for lagged_ae, fno, resnet, unet are provided</span>
+We will outline how one can implement their own data-driven models. Several examples, including ED, ResNet, UNet, and FNO have been provided in the main repository. 
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">lightning.pytorch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">chaosbench.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOUR_MODEL</span>
+**Step 1**: Define your model class.
 
-<span class="k">class</span><span class="w"> </span><span class="nc">S2SBenchmarkModel</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">LightningModule</span><span class="p">):</span>
+```
+# An example can be found for e.g. <YOUR_MODEL> == fno
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> 
-        <span class="o">...</span>
-    <span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">S2SBenchmarkModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+$ touch chaosbench/models/<YOUR_MODEL>.py
+```
+
+**Step 2**: Import and initialize your model in the main `chaosbench/models/model.py` file, given the pseudocode below.
+
+```
+# Examples for lagged_ae, fno, resnet, unet are provided
+
+import lightning.pytorch as pl
+from chaosbench.models import YOUR_MODEL
+
+class S2SBenchmarkModel(pl.LightningModule):
+
+    def __init__(
+        self, 
+        ...
+    ):
+        super(S2SBenchmarkModel, self).__init__()
         
-        <span class="c1"># Initialize your model</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">YOUR_MODEL</span><span class="o">.</span><span class="n">BEST_MODEL</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        # Initialize your model
+        self.model = YOUR_MODEL.BEST_MODEL(...)
 
-        <span class="c1"># The rest of model construction logic</span>
+        # The rest of model construction logic
       
-</pre></div>
-</div>
-<p><strong>Step 3</strong>: Run the <code class="docutils literal notranslate"><span class="pre">train.py</span></code> script. We recommend using GPUs for training.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># The _s2s suffix identifies data-driven models
+```
 
-$ python train.py --config_filepath chaosbench/configs/&lt;YOUR_MODEL&gt;_s2s.yaml
-</pre></div>
-</div>
-<blockquote>
-<div><p><strong>NOTE</strong>: Now you will notice that there is a <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file. We will define the definition of each field next, allowing for greater control over different training strategies.</p>
-</div></blockquote>
+**Step 3**: Run the `train.py` script. We recommend using GPUs for training.
+
+```
+# The _s2s suffix identifies data-driven models
+
+$ python train.py --config_filepath chaosbench/configs/<YOUR_MODEL>_s2s.yaml
+```
+
+> __NOTE__: Now you will notice that there is a `.yaml` file. We will define the definition of each field next, allowing for greater control over different training strategies. -->
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -465,7 +469,7 @@ $ python train.py --config_filepath chaosbench/configs/&lt;YOUR_MODEL&gt;_s2s.ya
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Dataset Information</p>
+        <p class="prev-next-title">Datasets</p>
       </div>
     </a>
     <a class="right-next"

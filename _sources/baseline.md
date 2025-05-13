@@ -1,5 +1,5 @@
-# Baseline Models
-We differentiate between physics-based and data-driven models.
+# Baselines
+<!-- We differentiate between physics-based and data-driven models.
 
 ## Model Definition
 - __Physics-Based Models (including control/perturbed forecasts)__:
@@ -36,4 +36,4 @@ Only for `unet_s2s` do we have many more checkpoints. This is to check for the e
 1. Version {0, 4, 5, 6, 7, 8, 9, 10, 11, 12} - Task 1 (Full optimization)
 2. Version {2, 13, 14, 15, 16, 17, 18, 19, 20, 21} - Task 2 (Sparse optimization)
 
-Each element in the array corresponds to checkpoints optimized for each $\Delta T \in \{1, 5, 10, 15, 20, 25, 30, 35, 40, 44\}$.
+Each element in the array corresponds to checkpoints optimized for each $\Delta T \in \{1, 5, 10, 15, 20, 25, 30, 35, 40, 44\}$. -->
